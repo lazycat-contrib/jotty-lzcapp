@@ -1,0 +1,31 @@
+application:
+  subdomain: jotty
+  background_task: true
+  multi_instance: false
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://jotty:3000/
+
+services:
+  jotty:
+    # upstream: ghcr.io/fccview/jotty:1.28.0
+    image: ghcr.1ms.run/fccview/jotty:1.28.0
+    user: "1000:1000"
+    environment:
+      - NODE_ENV=production
+    binds:
+      - /lzcapp/var/jotty/data:/app/data
+      - /lzcapp/var/jotty/config:/app/config
+      - /lzcapp/var/jotty/cache:/app/.next/cache
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - require('http').get('http://localhost:3000/api/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s

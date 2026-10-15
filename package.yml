@@ -1,0 +1,15 @@
+package: community.lazycat.app.jotty
+version: 1.28.0
+name: Jotty
+description: "Lightweight but powerful file-based notes and checklists"
+min_os_version: 1.5.0
+author: fccview
+license: AGPL-3.0
+homepage: https://github.com/fccview/jotty
+locales:
+  zh:
+    name: "Jotty"
+    description: "轻量而强大的文件化笔记与清单管理：多用户、PWA、Markdown，自托管"
+  en:
+    name: "Jotty"
+    description: "Lightweight but powerful alternative for managing your personal, file based, notes and checklists"
