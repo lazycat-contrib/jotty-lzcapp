@@ -1,5 +1,5 @@
 package: community.lazycat.app.jotty
-version: 1.28.0
+version: 1.29.1
 name: Jotty
 description: "Lightweight but powerful file-based notes and checklists"
 min_os_version: 1.5.0
