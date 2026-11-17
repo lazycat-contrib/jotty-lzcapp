@@ -9,8 +9,8 @@ application:
       backend: http://jotty:3000/
 services:
   jotty:
-    # upstream: ghcr.io/fccview/jotty:1.29.2
-    image: ghcr.1ms.run/fccview/jotty:1.29.2
+    # upstream: ghcr.io/fccview/jotty:1.30.0
+    image: ghcr.1ms.run/fccview/jotty:1.30.0
     user: "1000:1000"
     environment:
       - NODE_ENV=production
